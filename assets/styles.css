@@ -1,0 +1,116 @@
+/* =============================================================
+   ipad-casting · hoja de estilos base
+   Identidad AGUITECH · dark-mode, responsive iPad-first
+   ============================================================= */
+
+:root {
+  --c-azul:        #0066ff;
+  --c-cyan:        #00d4ff;
+  --c-bg:          #0a0e1a;
+  --c-bg-card:     #131838;
+  --c-border:      #1f2750;
+  --c-texto:       #e8edf5;
+  --c-texto-suave: #8b95b3;
+  --shadow-md:     0 12px 36px rgba(0, 102, 255, 0.18);
+  --radius:        16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  min-height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: radial-gradient(ellipse at top, #0f1633 0%, var(--c-bg) 60%);
+  color: var(--c-texto);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px 48px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 800;
+  color: var(--c-cyan);
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--c-cyan), var(--c-azul));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1.5px;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  font-size: clamp(15px, 2vw, 19px);
+  color: var(--c-texto-suave);
+  max-width: 640px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+.modes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.mode {
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.mode:hover {
+  transform: translateY(-3px);
+  border-color: var(--c-azul);
+  box-shadow: var(--shadow-md);
+}
+
+.mode-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.mode h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-texto);
+  margin-bottom: 6px;
+}
+
+.mode p {
+  font-size: 14px;
+  color: var(--c-texto-suave);
+  line-height: 1.5;
+}
+
+.hint {
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px dashed rgba(0, 212, 255, 0.4);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--c-texto-suave);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 48px 16px 32px; }
+  .modes { grid-template-columns: 1fr; }
+}
